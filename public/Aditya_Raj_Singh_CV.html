@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aditya Raj Singh - Curriculum Vitae</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1e293b;
+      --secondary: #334155;
+      --accent: #2563eb;
+      --text: #0f172a;
+      --text-muted: #475569;
+      --border: #cbd5e1;
+      --bg: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: var(--text);
+      background-color: #f1f5f9;
+      line-height: 1.45;
+      font-size: 13.5px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .cv-container {
+      max-width: 850px;
+      margin: 24px auto;
+      background: var(--bg);
+      padding: 36px 42px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      border-radius: 8px;
+    }
+
+    .no-print-bar {
+      max-width: 850px;
+      margin: 16px auto 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #0f172a;
+      color: #fff;
+      padding: 12px 20px;
+      border-radius: 8px;
+    }
+
+    .no-print-bar button {
+      background: #3b82f6;
+      color: white;
+      border: none;
+      padding: 8px 18px;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: background 0.2s;
+    }
+
+    .no-print-bar button:hover {
+      background: #2563eb;
+    }
+
+    /* CV Header */
+    header {
+      text-align: center;
+      border-bottom: 2px solid #e2e8f0;
+      padding-bottom: 14px;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #0f172a;
+      margin-bottom: 4px;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .contact-links a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .contact-links a:hover {
+      text-decoration: underline;
+    }
+
+    .separator {
+      color: #94a3b8;
+    }
+
+    /* Sections */
+    section {
+      margin-bottom: 14px;
+    }
+
+    .section-title {
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #1e3a8a;
+      border-bottom: 1.5px solid #93c5fd;
+      padding-bottom: 2px;
+      margin-bottom: 8px;
+    }
+
+    /* Skills Table / List */
+    .skills-block {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      font-size: 13px;
+    }
+
+    .skill-row {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      line-height: 1.4;
+    }
+
+    .skill-label {
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    .skill-values {
+      color: var(--secondary);
+    }
+
+    /* Projects */
+    .item-block {
+      margin-bottom: 10px;
+    }
+
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 2px;
+    }
+
+    .item-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .item-title a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      margin-left: 4px;
+      font-size: 12.5px;
+    }
+
+    .item-date {
+      font-size: 12px;
+      font-weight: 600;
+      color: #64748b;
+    }
+
+    .item-tech {
+      font-size: 12px;
+      color: #475569;
+      font-style: normal;
+      margin-bottom: 4px;
+    }
+
+    .item-tech strong {
+      color: #1e293b;
+    }
+
+    ul.bullet-list {
+      list-style-type: disc;
+      margin-left: 18px;
+      color: #334155;
+    }
+
+    ul.bullet-list li {
+      margin-bottom: 3px;
+      line-height: 1.42;
+    }
+
+    ul.bullet-list li strong {
+      color: #0f172a;
+    }
+
+    /* Two Column / Grid */
+    .edu-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 4px;
+    }
+
+    .edu-degree {
+      font-weight: 600;
+      color: #0f172a;
+    }
+
+    .edu-cgpa {
+      color: #1e3a8a;
+      font-weight: 700;
+    }
+
+    /* Certs & Achievements */
+    .cert-list {
+      list-style-type: disc;
+      margin-left: 18px;
+      color: #334155;
+    }
+
+    .cert-list li {
+      margin-bottom: 2px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    @media print {
+      body {
+        background: #fff;
+        font-size: 12.5px;
+      }
+
+      .no-print-bar {
+        display: none !important;
+      }
+
+      .cv-container {
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+        box-shadow: none;
+        border-radius: 0;
+      }
+
+      a {
+        text-decoration: none !important;
+        color: #0f172a !important;
+      }
+
+      .section-title {
+        border-bottom-color: #000;
+        color: #000;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="no-print-bar">
+    <div>
+      <strong>Aditya Raj Singh &bull; ATS-Optimized CV</strong>
+      <span style="color: #94a3b8; font-size: 13px; margin-left: 10px;">(CGPA: 7.06 | Updated)</span>
+    </div>
+    <button onclick="window.print()">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="6 9 6 2 18 2 18 9"></polyline>
+        <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+        <rect x="6" y="14" width="12" height="8"></rect>
+      </svg>
+      Print / Save as PDF
+    </button>
+  </div>
+
+  <div class="cv-container">
+    <header>
+      <h1>Aditya Raj Singh</h1>
+      <div class="contact-links">
+        <span>Email: <a href="mailto:adityarajsingh1189@gmail.com">adityarajsingh1189@gmail.com</a></span>
+        <span class="separator">&bull;</span>
+        <span>Mobile: <a href="tel:+918617463921">+91 8617463921</a></span>
+        <span class="separator">&bull;</span>
+        <span>LinkedIn: <a href="https://www.linkedin.com/in/adi-singh001" target="_blank">linkedin.com/in/adi-singh001</a></span>
+        <span class="separator">&bull;</span>
+        <span>GitHub: <a href="https://github.com/AdityaRajSingh08" target="_blank">github.com/AdityaRajSingh08</a></span>
+      </div>
+    </header>
+
+    <!-- SKILLS -->
+    <section>
+      <h2 class="section-title">Technical Skills</h2>
+      <div class="skills-block">
+        <div class="skill-row">
+          <span class="skill-label">Languages:</span>
+          <span class="skill-values">Java (5-Star), C/C++ (5-Star), Python, JavaScript (ES6+), HTML5, CSS3</span>
+        </div>
+        <div class="skill-row">
+          <span class="skill-label">Web / Backend:</span>
+          <span class="skill-values">Node.js, Express.js, REST APIs, React.js, Flask, Tailwind CSS, Socket.IO, Razorpay Webhooks</span>
+        </div>
+        <div class="skill-row">
+          <span class="skill-label">Databases & Cloud:</span>
+          <span class="skill-values">MongoDB (Aggregation & Indexing), MySQL, AWS (EC2, S3, CloudFront), Docker, Cloudinary</span>
+        </div>
+        <div class="skill-row">
+          <span class="skill-label">Security & Auth:</span>
+          <span class="skill-values">JWT Authentication, Argon2id Password Hashing, Role-Based Access Control (RBAC)</span>
+        </div>
+        <div class="skill-row">
+          <span class="skill-label">Tools & Testing:</span>
+          <span class="skill-values">Git, GitHub Actions (CI/CD), Postman, Jest, Playwright, Jira, Selenium, Apache, Cisco, Overleaf</span>
+        </div>
+        <div class="skill-row">
+          <span class="skill-label">Soft Skills:</span>
+          <span class="skill-values">Problem Solving, Team Player, Systems Architecture, Adaptability, Quick Learner</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section>
+      <h2 class="section-title">Featured Projects</h2>
+
+      <!-- Project 1: Book Nest -->
+      <div class="item-block">
+        <div class="item-header">
+          <span class="item-title">Book Nest &mdash; Personal Library Tracker &amp; Social Platform | <a href="https://github.com/AdityaRajSingh08" target="_blank">GitHub</a></span>
+          <span class="item-date">Jul &rsquo;26 &ndash; Aug &rsquo;26</span>
+        </div>
+        <div class="item-tech">
+          <strong>Tech Stack:</strong> MERN (MongoDB, Express, React, Node.js), AWS (EC2, S3, CloudFront), Socket.IO, Razorpay, Docker, GitHub Actions, Tailwind CSS, JWT, Argon2id, Cloudinary
+        </div>
+        <ul class="bullet-list">
+          <li><strong>Cloud Architecture &amp; Hardened Auth:</strong> Architected and deployed an end-to-end MERN application on AWS (EC2, S3, CloudFront) featuring multi-tier authentication with rotated refresh tokens, Argon2id hashing, and granular RBAC, replacing vulnerable single long-lived tokens.</li>
+          <li><strong>Real-time Social &amp; Payments:</strong> Implemented real-time interactive community features using Socket.IO; integrated Razorpay subscription billing handling the full webhook lifecycle with cryptographic signature verification and idempotent processing to prevent duplicate charges.</li>
+          <li><strong>Analytics &amp; CI/CD Pipeline:</strong> Engineered advanced reading analytics via MongoDB aggregation pipelines and indexed full-text search; automated end-to-end CI/CD using GitHub Actions, Docker containerization, and automated test coverage (Jest, Playwright).</li>
+        </ul>
+      </div>
+
+      <!-- Project 2: Video Streaming Backend -->
+      <div class="item-block">
+        <div class="item-header">
+          <span class="item-title">Video Streaming Backend Service | <a href="https://github.com/AdityaRajSingh08" target="_blank">GitHub</a></span>
+          <span class="item-date">Feb &rsquo;26 &ndash; Mar &rsquo;26</span>
+        </div>
+        <div class="item-tech">
+          <strong>Tech Stack:</strong> JavaScript, Node.js, Express.js, RESTful APIs, MongoDB, JWT
+        </div>
+        <ul class="bullet-list">
+          <li><strong>API Architecture:</strong> Architected modular backend microservices for a high-traffic video-streaming platform using Node.js, Express.js, and MongoDB, delivering 15+ RESTful API endpoints across an MVC design pattern.</li>
+          <li><strong>Security &amp; Middleware:</strong> Implemented JWT-based authentication and reusable middleware in Node.js, securing 100% of protected API endpoints and reducing duplicate authorization boilerplate by ~30%.</li>
+          <li><strong>Error Resilience &amp; Schemas:</strong> Engineered a centralized error-handling middleware layer and extensible MongoDB schemas, reducing unhandled request failures by ~25% and accelerating downstream feature integration.</li>
+        </ul>
+      </div>
+
+      <!-- Project 3: AI Code Explainer -->
+      <div class="item-block">
+        <div class="item-header">
+          <span class="item-title">AI Code Explainer &amp; Review Assistant | <a href="https://github.com/AdityaRajSingh08" target="_blank">GitHub</a></span>
+          <span class="item-date">Jul &rsquo;26 &ndash; Jul &rsquo;26</span>
+        </div>
+        <div class="item-tech">
+          <strong>Tech Stack:</strong> HTML5, CSS3, JavaScript, React, Node.js, Grok API
+        </div>
+        <ul class="bullet-list">
+          <li><strong>Real-Time AI Backend:</strong> Developed a low-latency Node.js backend powering an automated code-explanation service, supporting 5+ programming languages with real-time response handling and streaming.</li>
+          <li><strong>Intelligent Review:</strong> Integrated the Grok AI API for line-by-line algorithmic explanations and time complexity analysis, cutting manual code-review time by an estimated ~40% in developer sample walkthroughs.</li>
+          <li><strong>Responsive Frontend:</strong> Engineered an interactive React/HTML5 user interface featuring syntax highlighting, responsive file inputs, and sub-100ms UI responsiveness across desktop and mobile devices.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ACHIEVEMENTS -->
+    <section>
+      <h2 class="section-title">Achievements</h2>
+      <div class="item-block" style="margin-bottom: 6px;">
+        <div class="item-header">
+          <span class="item-title">5-Star Java Programmer &bull; HackerRank</span>
+          <span class="item-date">Dec &rsquo;24</span>
+        </div>
+        <ul class="bullet-list">
+          <li>Earned top-tier 5-star rating in Java by solving 100+ competitive programming challenges across Data Structures, Algorithms, and Object-Oriented Design.</li>
+        </ul>
+      </div>
+      <div class="item-block">
+        <div class="item-header">
+          <span class="item-title">5-Star C++ Programmer &bull; HackerRank</span>
+          <span class="item-date">Apr &rsquo;24</span>
+        </div>
+        <ul class="bullet-list">
+          <li>Earned top-tier 5-star rating in C++ by solving 100+ competitive programming challenges in memory management, STL algorithms, and algorithmic complexity.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+    <section>
+      <h2 class="section-title">Certifications</h2>
+      <ul class="cert-list">
+        <li>
+          <span><strong>Bits and Bytes of Computer Networking</strong> &mdash; Google</span>
+          <span class="item-date">Jul &rsquo;25</span>
+        </li>
+        <li>
+          <span><strong>AWS Academy Cloud Foundations</strong> &mdash; AWS</span>
+          <span class="item-date">Jul &rsquo;25</span>
+        </li>
+        <li>
+          <span><strong>Computational Theory</strong> &mdash; Infosys Springboard</span>
+          <span class="item-date">Oct &rsquo;24</span>
+        </li>
+        <li>
+          <span><strong>Introduction to Hardware and Operating System</strong> &mdash; IBM</span>
+          <span class="item-date">Sep &rsquo;24</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- EDUCATION -->
+    <section>
+      <h2 class="section-title">Education</h2>
+      <div class="item-block" style="margin-bottom: 6px;">
+        <div class="edu-row">
+          <div>
+            <span class="edu-degree">Lovely Professional University</span> &mdash; Phagwara, Punjab
+          </div>
+          <span class="item-date">Since Aug &rsquo;23</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; font-size: 13px; color: var(--secondary);">
+          <span>Bachelor of Technology &mdash; Computer Science and Engineering</span>
+          <span class="edu-cgpa">CGPA: 7.06</span>
+        </div>
+      </div>
+
+      <div class="item-block" style="margin-bottom: 6px;">
+        <div class="edu-row">
+          <div>
+            <span class="edu-degree">Narayana School</span> &mdash; Durgapur, West Bengal
+          </div>
+          <span class="item-date">Apr &rsquo;21 &ndash; Mar &rsquo;22</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; font-size: 13px; color: var(--secondary);">
+          <span>Intermediate (Senior Secondary)</span>
+          <span class="edu-cgpa">Percentage: 80.5%</span>
+        </div>
+      </div>
+
+      <div class="item-block">
+        <div class="edu-row">
+          <div>
+            <span class="edu-degree">Narayana School</span> &mdash; Durgapur, West Bengal
+          </div>
+          <span class="item-date">Apr &rsquo;19 &ndash; Mar &rsquo;20</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; font-size: 13px; color: var(--secondary);">
+          <span>Matriculation (Secondary)</span>
+          <span class="edu-cgpa">Percentage: 73.8%</span>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</body>
+</html>
